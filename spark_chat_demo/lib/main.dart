@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'dart:async';
 import 'package:crypto/crypto.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
-import 'package:web_socket_channel/html.dart';
+//import 'package:web_socket_channel/html.dart';
+import 'package:web_socket_channel/io.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -76,9 +76,12 @@ class ChatScreenState extends State<ChatScreen> {
   Future<String> _sendMessage(String message) async {
     // Using v4.0 endpoint for Ultra version
     const gptUrl = 'wss://spark-api.xf-yun.com/v4.0/chat';
-    const appId = '1914a613';
-    const apiKey = '5f783f881c4020275442be19e5b7e68f';
-    const apiSecret = 'ZTlhNzUzZjU3N2I4MWQzNWFhNjU5OGZh';
+    //const appId = '1914a613';
+    const appId = 'b4a5aacb';
+    //const apiKey = '5f783f881c4020275442be19e5b7e68f';
+    const apiKey = '6e77321814af29ee21a6ad8962f5ff10';
+    //const apiSecret = 'ZTlhNzUzZjU3N2I4MWQzNWFhNjU5OGZh';
+    const apiSecret = 'ZWNlYjMzMGQ5ZWIwYmRiMTBmZDQ1ODNh';
 
     final wsParam = WsParam(
       appId: appId,
@@ -91,7 +94,8 @@ class ChatScreenState extends State<ChatScreen> {
     print('Connecting to WebSocket: $wsUrl');
 
     try {
-      final channel = HtmlWebSocketChannel.connect(wsUrl);
+      //final channel = HtmlWebSocketChannel.connect(wsUrl);
+      final channel = IOWebSocketChannel.connect(wsUrl);
       final completer = Completer<String>();
       var fullResponse = '';
 
@@ -102,19 +106,16 @@ class ChatScreenState extends State<ChatScreen> {
         },
         'parameter': {
           'chat': {
-            'domain': '4.0Ultra',     // Changed to Ultra domain
+            'domain': '4.0Ultra', // Changed to Ultra domain
             'temperature': 0.5,
-            'max_tokens': 2048,       // Increased token limit
+            'max_tokens': 2048, // Increased token limit
             'auditing': 'default',
           }
         },
         'payload': {
           'message': {
             'text': [
-              {
-                'role': 'user',
-                'content': message
-              }
+              {'role': 'user', 'content': message}
             ]
           }
         }
@@ -128,9 +129,10 @@ class ChatScreenState extends State<ChatScreen> {
           print('Received WebSocket response: $response');
           try {
             final jsonResponse = jsonDecode(response);
-            
+
             if (jsonResponse['header']['code'] != 0) {
-              completer.completeError('API Error: ${jsonResponse['header']['message']}');
+              completer.completeError(
+                  'API Error: ${jsonResponse['header']['message']}');
               channel.sink.close();
               return;
             }
@@ -138,10 +140,10 @@ class ChatScreenState extends State<ChatScreen> {
             final choices = jsonResponse['payload']['choices'];
             final status = choices['status'];
             final content = choices['text'][0]['content'];
-            
+
             fullResponse += content;
             print('Current response: $content'); // Added for debugging
-            
+
             if (status == 2) {
               completer.complete(fullResponse);
               channel.sink.close();
@@ -175,6 +177,7 @@ class ChatScreenState extends State<ChatScreen> {
       throw Exception('Error sending message: $e');
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -188,7 +191,8 @@ class ChatScreenState extends State<ChatScreen> {
               padding: const EdgeInsets.all(8.0),
               reverse: true,
               itemCount: _messages.length,
-              itemBuilder: (_, index) => _messages[_messages.length - 1 - index],
+              itemBuilder: (_, index) =>
+                  _messages[_messages.length - 1 - index],
             ),
           ),
           if (_isLoading)
@@ -305,8 +309,7 @@ class WsParam {
     final digest = hmac.convert(hmacData);
     final signatureShaBase64 = base64.encode(digest.bytes);
 
-    final authorizationOrigin = 
-        'api_key="$apiKey", algorithm="hmac-sha256", '
+    final authorizationOrigin = 'api_key="$apiKey", algorithm="hmac-sha256", '
         'headers="host date request-line", '
         'signature="$signatureShaBase64"';
     final authorization = base64.encode(utf8.encode(authorizationOrigin));
@@ -322,8 +325,8 @@ class WsParam {
 
   String _encodeParams(Map<String, String> params) {
     return params.entries
-        .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .map((e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
         .join('&');
   }
 }
-
