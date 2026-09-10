@@ -1,8 +1,8 @@
 {
     "type": "service_account",
     "project_id": "eco-flash-444309-g9",
-    "private_key_id": "91e4c89c76443e684c819e86a9aa51ad20ed9c21",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC9hCeary+9ZVVm\nMDuFQWiYeNXeC9oDTpBgLtmSvleuJXftl+Zwz03kF3jyfFcBy9j89dqLqsnQGV10\nrSTGHXxV5IJ9i7FK+m1xdc8CYctBwbF3uXf0GLCExDVzSFsd3IlSVkTUPXikkdQc\nF3+XA2n4AqFTHAW+fc7Qr4ToWsBHEZRV9qWgZ8j7osFtmf3kheMOpXsYpikG2ZDd\n/4s01nuOkX3qy2m503QZA2LumsA9fj4d3PfaFcshH4jefuRQebtRKPXnKT9vDiFY\nOT8i6n+ka40ORlZndWlTKoKf0qPqgcjb6IDQtl7OFvlwZu5bLbsEJUZ3Auxuv5hv\npcDroCT9AgMBAAECggEAS3RLhGXNnx2yY64+dG63Y0Vw+ShE094602Cz1Z4dMMPQ\nPPOmlzGidHb3+6uPxLJRoV2NduA327fNor+xDYP91gDWB4BPxWdxnaPnGK6xC2w/\n6UgZv0D5PtMT6ONdC8WbkwGwA8S5vOQmzEx6yzhbv5fkfT+B9fcHGcVYKF7BgUmJ\neOYeykdtaZ7EyOh9hWUudFqrEbWZOYligtdkINW8CyV7x0HYvLMccpSVssKiDwKP\nqjW4UZIBnUUVn533EpFk98kvrYEL2QlhMgOmyvWt0rKi3fOQAhPNFqmNbEa9ukv2\nq/GfApXF1pMbVLqGb1EaFx8RF0CqohNJCFjm+uExjQKBgQDv9CNy50KbCdds6ZsL\nm4x5TpFujIMBTD1inqqk2Y3PV49am8zJhuZ2ccJXHD3bSlMDKMPwrLB+L+gFLYgt\nR36eNypf8Dp2XRXPx0AjTxePPhQp/kxWoUlaTd9FX7kK3QHwK2cSz1RfDQhjPCwi\nDLHyw4TYgyy14af0JH1ECOwCLwKBgQDKMI7O69O4pJvevKvzUPumx5emgji6+NXt\nlxy2UcS8GaOATOORIjMKVQ6EODzX55h1xGRSnxzOCJH0LZF3xydnxZGcG/3pH0MC\nCLLunLDllZO9M17i+3AvX32RtKdeHgi4ih8xJ7oABoKQb83JKKWVSqbsHp2JJKeH\nnBITf05ckwKBgQDAe/ujxNetPuvMtmhlm1XISbpoD9dXRy1G2zjQHKShWv/oE2rn\njot5IDBhaIpGSwzkT+M+QYki8JMS9D908xEjIeWgKDj9khZZIuDUcjHX+lh6hz/9\njkwlYKpmIC90A232lxqMAD0SMoYz9KUCe2ST9Tuv4yoOjQIJ2uuRlAaeiQKBgB+G\nFp34ctg1AgBmVkDnfXTxZZmWcBXmuiQDDXz3nr7dGHrmggyc0mxn+o1u3z2iZEjo\nR+QB3tHY0DjL6gRMzr4FNcCrNJlmQGJOzOcbExGYkqJLIh4tqb4ZG1DeY8Hu2Nk8\n38QgN4XNfgnbBLC6X6a5LvFdjJ5XUq94C/FyRdt1AoGATXM6PAEIp3Im/K2inh34\ne/dtuZTMJmzIujn4JKc+sXFmtFihd2wuIPDC18KR1Q4zoSNE9fDI4MlFYnnDY2pg\n6C6RsfqaU1H16gX0evi3OmGFvzwnMs4kqrzMVfnlsYUxRMdZGA8sMwGeBeIqeLGg\nJMAcWZ8opK/Btoy6r8i6uw8=\n-----END PRIVATE KEY-----\n",
+    "private_key_id": "PRIVATE_KEY_ID",
+    "private_key": "PRIVATE_KEY_VALUE",
     "client_email": "dialogflowappintegration@eco-flash-444309-g9.iam.gserviceaccount.com",
     "client_id": "104162680278542539418",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
